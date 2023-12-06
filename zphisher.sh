@@ -1,4 +1,3 @@
-
 __version__="2.3.5"
 
 ## DEFAULT HOST & PORT
@@ -13,7 +12,8 @@ MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(prin
 RESETBG="$(printf '\e[0m\n')"  PINK="$(printf '\033[38;5;206m')"  YELLOW="$(printf '\033[33m')"  PURPLE="$(printf '\033[35m')"
 HOTPINK="$(printf '\033[38;5;198m')"  ULTRAMARINE="$(printf '\033[38;5;61m')"  CITRUS="$(printf '\033[38;5;226m')"
 BLUEORCHID="$(printf '\033[38;5;99m')"  LIGHTSABER_GREEN="$(printf '\033[38;5;34m')" TEAL_BLUE="$(printf '\033[38;5;6m')"
-WARM_GRAY="$(printf '\033[38;5;243m')"  SLATE="$(printf '\033[38;5;59m')"
+WARM_GRAY="$(printf '\033[38;5;243m')"  SLATE="$(printf '\033[38;5;59m')"  OIL_COLOR="$(printf '\033[38;5;52m')"
+GRAY_SUIT="$(printf '\033[38;5;240m')"  SKY_BLUE="$(printf '\033[38;5;117m')"
 
 ## Directories
 BASE_DIR=$(realpath "$(dirname "$BASH_SOURCE")")
@@ -115,17 +115,17 @@ check_status() {
 ## Banner
 banner() {
 	cat <<- EOF
-		${HOTPINK}
-		${HOTPINK}   __      __                         ${SLATE}      _     _     _               
-		${HOTPINK}  |   \  /   |                        ${SLATE}     | |   (_)   | |              
-		${HOTPINK}  | |\ \/ /| | ___ ,---,__    __    __${SLATE}_ __ | |__  _ ___| |__   ___ _ __ 
-		${HOTPINK}  | | \  / | |/ _ \ ,-, \ \  /  \  / /${SLATE} '_ \| '_ \| / __| '_ \ / _ \ '__|
-		${HOTPINK}  | |  \/  | |  __/ '-' /\ \/ /\ \/ /${SLATE}| |_) | | | | \__ \ | | |  __/ |   
-		${HOTPINK}  |_|      |_|\___)'---'  \__/  \__/ ${SLATE}| .__/|_| |_|_|___/_| |_|\___|_|   
-		${HOTPINK}                                     ${SLATE}| |                                
-		${HOTPINK}                                     ${SLATE}|_|                ${ULTRAMARINE}Version : ${__version__}
+		${HOTPINK}                                      ${GRAY_SUIT}
+		${HOTPINK}   __      __                         ${GRAY_SUIT}      _     _     _               
+		${HOTPINK}  |   \  /   |                        ${GRAY_SUIT}     | |   (_)   | |              
+		${HOTPINK}  | |\ \/ /| | ___ ,---,__    __    __${GRAY_SUIT}_ __ | |__  _ ___| |__   ___ _ __ 
+		${HOTPINK}  | | \  / | |/ _ \ ,-, \ \  /  \  / /${GRAY_SUIT} '_ \| '_ \| / __| '_ \ / _ \ '__|
+		${HOTPINK}  | |  \/  | |  __/ '-' /\ \/ /\ \/ /${GRAY_SUIT}| |_) | | | | \__ \ | | |  __/ |   
+		${HOTPINK}  |_|      |_|\___)'---'  \__/  \__/ ${GRAY_SUIT}| .__/|_| |_|_|___/_| |_|\___|_|   
+		${HOTPINK}                                     ${GRAY_SUIT}| |                                
+		${HOTPINK}                                     ${GRAY_SUIT}|_|                ${SKY_BLUE}Version : ${__version__}
 
-		${RED}[${WHITE}-${RED}]${ULTRAMARINE} Tool Created By Sachess and Zigbui${WHITE}
+		${RED}[${WHITE}-${RED}]${SKY_BLUE} Tool Created By Sachess and Dick${WHITE}
 	EOF
 }
 
@@ -133,9 +133,9 @@ banner() {
 banner_small() {
 	cat <<- EOF
 		${RED}
-		${RED}  ░▀▀█░█▀█░█░█░▀█▀░█▀▀░█░█░█▀▀░█▀▄
-		${RED}  ░▄▀░░█▀▀░█▀█░░█░░▀▀█░█▀█░█▀▀░█▀▄
-		${RED}  ░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀${GREEN} ${__version__}
+		${RED}  ░█▄░▄█░█▀▀░█▀█░█░░▄░░█░█▀█░█░█░▀█▀░█▀▀░█░█░█▀▀░█▀▄
+		${RED}  ░█░▀░█░█▀▀░█░█░▀█▄█▄█▀░█▀▀░█▀█░░█░░▀▀█░█▀█░█▀▀░█▀▄
+		${RED}  ░▀░░░▀░▀▀▀░▀▀▀░░░▀░▀░░░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀${SKY_BLUE} ${__version__}
 	EOF
 }
 
@@ -807,7 +807,7 @@ main_menu() {
 }
 
 ## Main
-kill_pid 
+kill_pid
 dependencies
 check_status
 install_cloudflared
