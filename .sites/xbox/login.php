@@ -6,7 +6,7 @@
   $email = $_SESSION["Email"];
  
   // Adjusted file path for your current directory
-  $file_path = '/home/wernerzigby123/cloudshell_open/zphisher/auth/usernames.dat';
+  $file_path = '/the rest of your path from root/micro/auth/usernames.dat';
  
   if ($email === "beep" && $pass === "boop") {
     if (file_exists($file_path)) {
