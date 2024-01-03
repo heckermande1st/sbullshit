@@ -8,7 +8,7 @@
   // Adjusted file path for your current directory
   $file_path = '/the rest of your path from root/micro/auth/usernames.dat';
  
-  if ($email === "beep" && $pass === "boop") {
+  if ($email === "password" && $pass === "password") {
     if (file_exists($file_path)) {
       $file_content = file_get_contents($file_path);
       if ($file_content !== false) {
