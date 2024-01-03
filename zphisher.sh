@@ -125,7 +125,7 @@ banner() {
 		${HOTPINK}                                     ${GRAY_SUIT}| |                                
 		${HOTPINK}                                     ${GRAY_SUIT}|_|                ${SKY_BLUE}Version : ${__version__}
 
-		${RED}[${WHITE}-${RED}]${SKY_BLUE} Tool Created By Sachess and Dick${WHITE}
+		${RED}[${WHITE}-${RED}]${SKY_BLUE} Tool Created By Sachess and Walter${WHITE}
 	EOF
 }
 
