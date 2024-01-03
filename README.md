@@ -23,11 +23,10 @@
     <p>Make changes to the username and password within the file:</p>
 
     <pre><code>if ($email === "password" &amp;&amp; $pass === "password") {
+    // Your code logic here
 }</code></pre>
 
     <p>After making these modifications, execute the page. If no one logs into the page initially, the system will create the document. If nothing is written to the document, it indicates that no login attempts have been made.</p>
 
 </body>
 </html>
-
-
